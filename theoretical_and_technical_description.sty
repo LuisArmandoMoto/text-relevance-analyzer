@@ -1,0 +1,57 @@
+TEXT RELEVANCE ANALYZER
+Theoretical and Technical Description
+(English / Español)
+
+
+========================
+ENGLISH VERSION
+========================
+
+This project was developed during my academic training in Linguistics as a response to a practical and recurrent problem: determining which texts are genuinely relevant to my research interests before investing significant time in close reading. In theoretical disciplines such as linguistics, where academic material is abundant and often extensive, reading irrelevant or marginally useful texts represents a high opportunity cost. This tool introduces a quantitative pre-selection stage into the academic reading workflow.
+
+The central assumption of the project is that lexical distribution provides meaningful signals about the thematic orientation of a text. While linguistic interpretation ultimately requires qualitative analysis, statistical properties of language can be exploited to approximate relevance, topicality, and conceptual focus. The system is not designed to understand texts in a semantic or interpretive sense, but to measure alignment between a document and a set of user-defined conceptual interests.
+
+From a theoretical standpoint, the project is grounded in classical models from information retrieval and computational linguistics, particularly the bag-of-words representation. In this framework, a document is modeled as a multiset of lexical items, abstracting away from syntax and word order. Although this abstraction ignores higher-level linguistic structure, it has proven effective for document comparison, topic detection, and relevance estimation due to its interpretability and computational simplicity.
+
+The preprocessing pipeline reflects standard practices in natural language processing. Raw text is normalized through lowercasing and tokenization, enabling consistent comparison of lexical units. Stopword removal is applied to reduce the influence of high-frequency function words that carry limited semantic content for relevance analysis. This step prevents structural properties of language from overshadowing domain-specific vocabulary.
+
+The project implements two complementary relevance metrics.
+
+The first metric is frequency-based relevance. For each keyword provided by the user, the system computes its relative frequency with respect to the total number of tokens in the document. This normalized measure reflects the prominence of a given concept within the text. While simple and transparent, this metric does not distinguish between informative terms and words that are frequent across many contexts.
+
+To address this limitation, the second metric is based on TF-IDF (Term Frequency–Inverse Document Frequency). TF-IDF originates from information retrieval theory and formalizes the intuition that relevant terms are those that occur frequently in a document but are not uniformly common across language. Term Frequency captures local importance, while Inverse Document Frequency downweights globally frequent terms. Even when applied to a single document, TF-IDF functions as a heuristic for identifying terms that are characteristic of the text rather than linguistically generic.
+
+Beyond keyword scoring, the system extracts the top TF-IDF-weighted terms from the document. This component serves an exploratory function and often reveals dominant concepts, recurring themes, or stylistic markers that were not explicitly anticipated by the user. This approach aligns with corpus-linguistic methodologies in which salient lexical items are used as indicators of thematic structure.
+
+In addition to relevance estimation, the project includes a supervised text classification component. Using TF-IDF features and a multiclass logistic regression model, documents are assigned to broad linguistic subfields such as syntax, phonetics, semantics, or pragmatics. This classifier is not intended to provide definitive disciplinary categorization, but rather a probabilistic approximation based on lexical distribution.
+
+The system is implemented in Python and follows a modular architecture. Separate modules handle text loading (including PDF extraction), preprocessing, frequency-based scoring, TF-IDF analysis, classification, and visualization. This design reflects both software engineering principles and conceptual clarity, allowing each analytical stage to be modified or extended independently without altering the core workflow.
+
+In practical use, this tool functioned as an aid for academic decision-making. It was employed to compare books, articles, and other long-form texts against specific theoretical interests, guiding reading priorities under time constraints. Rather than replacing close reading or theoretical interpretation, the analyzer provides an initial quantitative filter that supports more informed and efficient engagement with academic material.
+
+
+========================
+VERSIÓN EN ESPAÑOL
+========================
+
+Este proyecto fue desarrollado durante mi formación académica en Lingüística como respuesta a un problema práctico y recurrente: determinar qué textos son genuinamente relevantes para mis intereses de investigación antes de invertir una cantidad considerable de tiempo en su lectura detallada. En disciplinas teóricas como la lingüística, donde el material académico es abundante y a menudo extenso, leer textos irrelevantes o marginalmente útiles implica un alto costo de oportunidad. Esta herramienta introduce una etapa cuantitativa de preselección en el flujo de trabajo académico de lectura.
+
+El supuesto central del proyecto es que la distribución léxica proporciona señales significativas sobre la orientación temática de un texto. Si bien la interpretación lingüística requiere en última instancia un análisis cualitativo, las propiedades estadísticas del lenguaje pueden explotarse para aproximar la relevancia, la topicalidad y el enfoque conceptual. El sistema no está diseñado para “entender” los textos en un sentido semántico o interpretativo, sino para medir la alineación entre un documento y un conjunto de intereses conceptuales definidos por el usuario.
+
+Desde un punto de vista teórico, el proyecto se fundamenta en modelos clásicos de recuperación de información y lingüística computacional, en particular en la representación de bolsa de palabras (bag-of-words). En este marco, un documento se modela como un multiconjunto de elementos léxicos, abstrayendo la sintaxis y el orden de las palabras. Aunque esta abstracción ignora niveles superiores de estructura lingüística, ha demostrado ser eficaz para la comparación de documentos, la detección de temas y la estimación de relevancia debido a su interpretabilidad y simplicidad computacional.
+
+El proceso de preprocesamiento sigue prácticas estándar en el procesamiento de lenguaje natural. El texto en bruto se normaliza mediante la conversión a minúsculas y la tokenización, lo que permite comparar unidades léxicas de manera consistente. Se aplica la eliminación de palabras vacías (stopwords) para reducir la influencia de palabras funcionales de alta frecuencia que aportan poco contenido semántico al análisis de relevancia. Este paso evita que las propiedades estructurales del lenguaje opaquen el vocabulario específico del dominio.
+
+El proyecto implementa dos métricas de relevancia complementarias.
+
+La primera métrica es la relevancia basada en frecuencia. Para cada palabra clave proporcionada por el usuario, el sistema calcula su frecuencia relativa con respecto al número total de tokens del documento. Esta medida normalizada refleja la prominencia de un concepto dentro del texto. Aunque es simple y transparente, esta métrica no distingue entre términos informativos y palabras que son frecuentes en múltiples contextos.
+
+Para abordar esta limitación, la segunda métrica se basa en TF-IDF (Frecuencia de Término – Frecuencia Inversa de Documento). TF-IDF se origina en la teoría de recuperación de información y formaliza la intuición de que los términos relevantes son aquellos que aparecen con frecuencia en un documento pero no son uniformemente comunes en el lenguaje. La frecuencia de término captura la importancia local, mientras que la frecuencia inversa de documento penaliza los términos globalmente frecuentes. Incluso cuando se aplica a un solo documento, TF-IDF funciona como una heurística para identificar términos característicos del texto y no meramente genéricos.
+
+Más allá de la puntuación de palabras clave, el sistema extrae los términos con mayor peso TF-IDF del documento. Este componente cumple una función exploratoria y, en la práctica, suele revelar conceptos dominantes, temas recurrentes o marcadores estilísticos que no fueron anticipados explícitamente por el usuario. Este enfoque se alinea con metodologías de la lingüística de corpus, donde los elementos léxicos salientes se utilizan como indicadores de la estructura temática.
+
+Además del análisis de relevancia, el proyecto incorpora un componente de clasificación supervisada de textos. Utilizando características TF-IDF y un modelo de regresión logística multiclase, los documentos se asignan a subcampos amplios de la lingüística como sintaxis, fonética, semántica o pragmática. Este clasificador no pretende ofrecer una categorización disciplinaria definitiva, sino una aproximación probabilística basada en la distribución léxica.
+
+El sistema está implementado en Python y sigue una arquitectura modular. Módulos separados se encargan de la carga de texto (incluida la extracción desde archivos PDF), el preprocesamiento, el cálculo de relevancia por frecuencia, el análisis TF-IDF, la clasificación y la visualización. Este diseño refleja tanto principios de ingeniería de software como claridad conceptual, permitiendo extender o modificar cada etapa analítica sin alterar el flujo central del sistema.
+
+En la práctica, esta herramienta funcionó como un apoyo para la toma de decisiones académicas. Fue utilizada para comparar libros, artículos y otros textos extensos con intereses teóricos específicos, orientando las prioridades de lectura bajo restricciones de tiempo. En lugar de sustituir la lectura cercana o la interpretación teórica, el analizador proporciona un filtro cuantitativo inicial que favorece una interacción más informada y eficiente con el material académico.

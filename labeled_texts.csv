@@ -1,0 +1,60 @@
+text,label
+"This study explores how meaning is structured through lexical relations.",semantics
+"Semantic change in digital communication reflects cultural evolution.",semantics
+"The paper analyzes ambiguity and word sense disambiguation.",semantics
+"Meaning construction in metaphors is examined.",semantics
+"The relationship between reference and sense is discussed.",semantics
+
+"This article studies how context affects speaker meaning.",pragmatics
+"Implicature and politeness strategies are analyzed.",pragmatics
+"Pragmatic markers in online conversations are examined.",pragmatics
+"Speech acts in digital discourse are described.",pragmatics
+"The role of context in interpretation is central to this study.",pragmatics
+
+"This work presents a syntactic analysis of clause structure.",syntax
+"Word order variation in Romance languages is examined.",syntax
+"The paper discusses syntactic movement and hierarchy.",syntax
+"Phrase structure rules are analyzed.",syntax
+"The syntax of interrogative sentences is explored.",syntax
+
+"This research focuses on discourse coherence and cohesion.",discourse_analysis
+"Turn-taking mechanisms in conversation are analyzed.",discourse_analysis
+"Critical discourse analysis of political speeches is presented.",discourse_analysis
+"The structure of narratives in spoken discourse is examined.",discourse_analysis
+"Discourse markers and their functions are studied.",discourse_analysis
+
+"This paper studies language variation across social groups.",sociolinguistics
+"Code-switching in bilingual communities is analyzed.",sociolinguistics
+"Language and identity in online spaces are explored.",sociolinguistics
+"Social factors influencing language change are discussed.",sociolinguistics
+"Attitudes toward dialect variation are examined.",sociolinguistics
+
+"This article analyzes vowel articulation in connected speech.",phonetics
+"Acoustic properties of consonants are examined.",phonetics
+"The study focuses on speech perception and production.",phonetics
+"Formant analysis of vowels is presented.",phonetics
+"Temporal features of speech sounds are analyzed.",phonetics
+
+"This paper describes the phonological system of a language.",phonology
+"Stress patterns and syllable structure are examined.",phonology
+"The study analyzes phonological processes like assimilation.",phonology
+"Contrastive phonology between languages is discussed.",phonology
+"Phoneme inventories and distributions are analyzed.",phonology
+
+"This research examines sound change over time.",historical_linguistics
+"The evolution of verb morphology is analyzed.",historical_linguistics
+"Grammaticalization processes are discussed.",historical_linguistics
+"Diachronic syntax in Romance languages is examined.",historical_linguistics
+"Language change through contact is explored.",historical_linguistics
+
+"This paper presents a descriptive grammar of a language.",general_grammar
+"Morphological systems and inflectional patterns are described.",general_grammar
+"The grammatical categories of tense and aspect are analyzed.",general_grammar
+"Agreement systems in natural languages are examined.",general_grammar
+"The interaction between morphology and syntax is discussed.",general_grammar
+
+"This paper presents a numerical method for optimization.",non_linguistics
+"An introduction to machine learning algorithms is provided.",non_linguistics
+"The design of a distributed system is described.",non_linguistics
+"A study on financial risk modeling is presented.",non_linguistics
+"Graph theory applications in computer science are discussed.",non_linguistics
